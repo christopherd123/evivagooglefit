@@ -51,7 +51,25 @@ class Evivagooglefit_Admin {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
+		$this->load_dependencies();
+}
 
+	/**
+	 * Load the required dependencies for the Admin facing functionality.
+	 *
+	 * Include the following files that make up the plugin:
+	 *
+	 *
+	 * @since    1.0.0
+	 * @access   private
+	 */
+	private function load_dependencies() {
+
+		/**
+		 * The class responsible for orchestrating the actions and filters of the
+		 * core plugin.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) .  'admin/class-evivagooglefit-settings.php';
 	}
 
 	/**
